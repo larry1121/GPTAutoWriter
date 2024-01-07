@@ -2,15 +2,18 @@ import requests as r
 import openai as ai
 import os
 from config import *
+from dotenv import load_dotenv
 
-ai.api_key = GPT_API_KEY
-access = ACCESS_TOKEN
+load_dotenv(verbose=True)
+
+ai.api_key = os.getenv('GPT_API_KEY')
+access = os.getenv('ACCESS_TOKEN')
 
 def write_blog(title, content, category, tag):
     url = "https://www.tistory.com/apis/post/write"
     params = {
             "access_token": access,
-            "blogName": "essaywrit",
+            "blogName": "giftedmbti",
             "title": title,
             "content": content,
             "visibility": 0,
@@ -69,7 +72,7 @@ def sep_writing(writing):
     content = writing[writing.find('<'):]
     return title, content
 if __name__ == "__main__":
-    label = "영화"
+    label = "MBTI"
     category = get_category_id(label)
     writing = write_content(label)
     title, content = sep_writing(writing)

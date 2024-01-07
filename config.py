@@ -68,6 +68,6 @@ SYSTEM="""You are a blogger who writes SEO-optimized blog posts about the MBTI i
 
 
 
-USER="""아무 영화 하나에 대해서 블로그 글 적어줘."""
+USER="""너는 MBTI 전문 블로거야."""
 HASHTAG_USER="""쓴 블로그 글에 대해서 해쉬태그 생성. 쉼표로 구분, #은 제거"""
 
